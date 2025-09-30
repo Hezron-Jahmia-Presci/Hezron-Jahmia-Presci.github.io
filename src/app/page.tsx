@@ -1,88 +1,97 @@
-"use client";
-
-import Banner from "@/components/banner";
-import Button from "@/components/button";
-import PageContainer from "@/components/pageContainer";
-import { siteContent } from "@/content/siteContent";
-import { useAutoRouteScroll } from "@/hooks/useAutoRouteScroll";
-import { FaInstagram, FaLinkedin, FaBehance, FaTwitter } from "react-icons/fa";
-
-const pageOrder = ["/", "/about", "/tech-stack", "/works", "/clients", "/contact"];
+import ProjectCard from "@/components/projectCard";
+import { content } from "@/content/siteContent";
+import FadeInSection from "@/scripts/fadeInSection";
+import Image from "next/image";
 
 export default function Home() {
-	useAutoRouteScroll(pageOrder);
-	return (
-		<main className="home">
-			<Banner>
-				<PageContainer>
-					<section className="s-1 image">
+  return (
+    <div className="container">
+      <div className="home-page">
+        <FadeInSection>
+          <div>
+            <Image
+              src="/favicon.ico"
+              alt="Logo"
+              width={300}
+              height={300}
+              className="cover-image"
+            />
+            <h1>👋🏾 {content.intro.title}</h1>
+            <p>{content.intro.body}</p>
+            <p>{content.intro.statement}</p>
+            <button>
+              <strong><a href="mailto:hezron.p.jahmia@gmail.com">Let&apos;s Build Something Together</a></strong>
+            </button>
+          </div>
 
-					</section>
-					<section className="s-1">
-						<h4>{siteContent.home.hero.title}</h4>
-						<h1>{siteContent.home.hero.heading}</h1>
+        </FadeInSection>
 
-						<section className="s-0">
-							<Button
-								label="START A PROJECT"
-								className="btn-primary"
-								href="/contact"
-							/>
+        <FadeInSection>
+          <section className="about-section">
+            <div>
+              <p>{content.about.body}</p>
+            </div>
+            <div className="about-header">
+              <h1>🤵🏾</h1>
+              <h2>{content.about.title}</h2>
+            </div>
+          </section>
+        </FadeInSection>
 
+        <FadeInSection>
+          <section>
+            <div className="skills-header">
+              <h1>👨🏾‍💻</h1>
+              <h2>{content.skills.title}</h2>
+            </div>
+            <div className="skills-body">
+              <h3>
+                <strong>{content.skills.body[0].heading}</strong> —{" "}
+                {content.skills.body[0].content}
+              </h3>
+              <h3>
+                <strong>{content.skills.body[1].heading}</strong> —{" "}
+                {content.skills.body[1].content}
+              </h3>
+              <h3>
+                <strong>{content.skills.body[2].heading}</strong> —{" "}
+                {content.skills.body[2].content}
+              </h3>
+            </div>
+          </section>
+        </FadeInSection>
 
-							<Button
-								label="MORE ABOUT ME"
-								className="btn-primary"
-								href="/about"
-							/>
-						</section>
-					</section>
-				</PageContainer>
+        <FadeInSection>
+          <div className="works-section">
+            <h1>🏢</h1>
+            <h2>{content.works.title}</h2>
+          </div>
 
-				<section className="s-2">
-					<a
-						href={siteContent.contact.links.instagram}
-						className="icon-bubble"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="Instagram"
-					>
-						<FaInstagram className="contact-icon" />
-					</a>
+          <ProjectCard
+            image={content.works.contents[0].image}
+            title={content.works.contents[0].title}
+            description={content.works.contents[0].description}
+          />
 
-					<a
-						href={siteContent.contact.links.twitter}
-						className="icon-bubble"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="Twitter"
-					>
-						<FaTwitter className="contact-icon" />
-					</a>
+          <ProjectCard
+            image={content.works.contents[1].image}
+            title={content.works.contents[1].title}
+            description={content.works.contents[1].description}
+          />
 
-					<a
-						href={siteContent.contact.links.inkedin}
-						className="icon-bubble"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="LinkedIn"
-					>
-						<FaLinkedin className="contact-icon" />
-					</a>
+          <ProjectCard
+            image={content.works.contents[2].image}
+            title={content.works.contents[2].title}
+            description={content.works.contents[2].description}
+          />
 
-					<a
-						href={siteContent.contact.links.behance}
-						className="icon-bubble"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="Behance"
-					>
-						<FaBehance className="contact-icon" />
-					</a>
-				</section>
-
-				<div className="home-line"></div>
-			</Banner>
-		</main>
-	);
+          <ProjectCard
+            image={content.works.contents[3].image}
+            title={content.works.contents[3].title}
+            description={content.works.contents[3].description}
+          />
+        </FadeInSection>
+      </div>
+    </div>
+  );
 }

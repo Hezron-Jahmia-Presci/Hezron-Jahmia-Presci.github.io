@@ -1,85 +1,70 @@
+# 🌐 Jahmia Hezron Presci — Portfolio
 
-# 🌐 Jahmia Hezron – Personal Portfolio
+This is my personal portfolio website, built with **Next.js** and modern web tools. It highlights my experience as a **Software Engineer & IT Specialist**, showcasing my projects, skills, and background.  
 
-This is my personal developer portfolio website, built using [Next.js](https://nextjs.org/) and deployed on [Vercel](https://vercel.com/). It showcases my skills, experience, recent projects, and professional background as a fullstack developer.
+## ✨ Features  
 
-## 🚀 Live Demo
+- 🖼️ Project showcase with interactive cards  
+- 📱 Responsive design (mobile, tablet, desktop)  
+- 🌍 SEO-optimized pages for better visibility  
+- ⚡ Built with **Next.js App Router** for performance  
+- 🔗 Quick links to GitHub, WhatsApp, and Email for easy contact  
 
-🔗 [Visit Portfolio](https://hezron-jahmia-presci.vercel.app)
+## 🛠️ Tech Stack  
 
-## 🛠️ Tech Stack
+- **Frontend Framework:** Next.js (React, TypeScript)  
+- **Styling:** CSS/SCSS Modules & custom design system  
+- **Icons:** React Icons (FontAwesome, Material Design)  
+- **Fonts:** Google Fonts (Geist, EB Garamond)  
+- **Hosting:** Vercel (recommended)  
 
-- **Frontend:** Next.js, TypeScript, React
-- **Styling:** SCSS Modules / CSS
-- **Animations:** Framer Motion
-- **Deployment:** Vercel
-- **Version Control:** Git & GitHub
+## 🚀 Getting Started  
 
-## 📂 Folder Structure
-
-```
-.
-├── public/            # Static assets
-├── pages/             # Next.js pages
-├── components/        # Reusable UI components
-├── styles/            # SCSS or CSS modules
-├── utils/             # Utility functions (if any)
-└── README.md
-```
-
-## 📸 Features
-
-- Responsive, mobile-friendly design
-- Animated page transitions with Framer Motion
-- Projects showcase with links and categories
-- Smooth scroll and accessible navigation
-- SEO optimized for search engine indexing
-
-## 🚧 Setup and Development
-
-### 1. Clone the Repository
+Clone the repository and install dependencies:  
 
 ```bash
-git clone https://github.com/Hezron-Jahmia-Presci/hezron-jahmia-presci.git
-cd your-repo-name
-```
-
-### 2. Install Dependencies
-
-```bash
+git clone https://github.com/Hezron-Jahmia-Presci/portfolio.git
+cd portfolio
 npm install
-# or
-yarn install
 ```
 
-### 3. Run the Development Server
+Run the development server:  
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.  
 
-## 📦 Build for Production
+## 📂 Project Structure  
 
-```bash
-npm run build
-npm run start
+```
+portfolio/
+├── app/             # Next.js App Router
+│   ├── layout.tsx   # Root layout
+│   ├── page.tsx     # Homepage
+│   └── ...
+├── components/      # Reusable components (Navbar, Footer, etc.)
+├── public/          # Static assets (images, icons, etc.)
+├── styles/          # Global and component styles
+└── README.md
 ```
 
-## 🌍 Deployment
+## 🔑 SEO  
 
-This project is automatically deployed to [Vercel](https://vercel.com/) on every push to the `main` branch. For custom domain setup, refer to the Vercel dashboard.
+The portfolio includes custom metadata for better search ranking:  
 
-## 📧 Contact
+- Title & Description  
+- Open Graph (social sharing)  
+- Twitter cards  
+- Keywords for discoverability  
 
-Feel free to reach out via:
+## 📬 Contact  
 
-- Email: [hezron.p.jahmia@gmail.com](mailto:hezron.p.jahmia@gmail.com)
-- LinkedIn: [https://linkedin.com/in/hezron-jahmia-01a165371/](https://linkedin.com/in/hezron-jahmia-01a165371/)
+- **Email:** [hezron.p.jahmia@gmail.com](mailto:hezron.p.jahmia@gmail.com)  
+- **GitHub:** [Hezron-Jahmia-Presci](https://github.com/Hezron-Jahmia-Presci)  
+- **WhatsApp:** [Chat with me](https://wa.me/256752580722)  
 
----
+## 📄 License  
 
-© 2025 Jahmia Hezron. All rights reserved.
+This project is licensed under the **MIT License**.  

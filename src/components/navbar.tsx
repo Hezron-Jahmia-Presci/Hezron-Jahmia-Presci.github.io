@@ -1,55 +1,47 @@
-'use client';
+"use client";
+import NextLink from "next/link";
+import { useEffect, useState } from "react";
+import { FaGithub, FaWhatsapp } from "react-icons/fa";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { FiMenu, FiX } from 'react-icons/fi';
-import { FaGithub } from 'react-icons/fa6';
-import { siteContent } from '@/content/siteContent';
+export default function Navbar() {
+    const [scrolled, setScrolled] = useState(false);
 
-const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 10);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
 
     return (
-        <>
-            <nav className="navbar">
-                <div className="navbar-inner">
-                    <div className="company-name">
-                        <div className='company-logo'>
+        <div className="container">
+            <nav className={scrolled ? "scrolled" : ""}>
+                <section className="navbar-section">
+                    <NextLink href="/">
+                        <strong><p className="logo">JAHMIA HEZRON PRESCI</p></strong>
+                    </NextLink>
+                    <ul>
+                        <li>
                             <a
-                                href={siteContent.contact.links.gitHub}
-                                className="icon-bubble"
+                                href="https://wa.me/256752580722"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                title="GitHub"
                             >
-                                <FaGithub className="contact-icon" />
+                                <FaWhatsapp className="whatsapp" size={30} />
                             </a>
-                        </div>Hezron Jahmia.</div>
-                    <div className="menu-toggle" onClick={() => setMenuOpen(true)}>
-                        <FiMenu />
-                    </div>
-
-                </div>
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/Hezron-Jahmia-Presci"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub className="github" size={30} />
+                            </a>
+                        </li>
+                    </ul>
+                </section>
             </nav>
-
-            <div className={`side-panel ${menuOpen ? 'open' : ''}`}>
-                <div className="panel-header">
-                    <FiX className="close-icon" onClick={() => setMenuOpen(false)} />
-                </div>
-                <div className="panel-links">
-                    <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-                    <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
-                    <Link href="/tech-stack" onClick={() => setMenuOpen(false)}>Tech Stack</Link>
-                    <Link href="/works" onClick={() => setMenuOpen(false)}>Works</Link>
-                    <Link href="/clients" onClick={() => setMenuOpen(false)}>Clients</Link>
-                    <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-                </div>
-            </div>
-
-            {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)} />}
-        </>
+        </div>
     );
-};
-
-export default Navbar;
+}

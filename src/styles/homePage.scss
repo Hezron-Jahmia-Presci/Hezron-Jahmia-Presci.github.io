@@ -1,0 +1,33 @@
+.home-page {
+    .cover-image {
+        border-radius: 100%;
+        box-shadow: 0rem 0.1rem 0.5rem 0.2rem #0c0c0c95;
+        border: solid 0.5rem #0c0c0c95;
+    }
+    .about-section {
+        flex-wrap: wrap-reverse;
+    }
+    .about-header,
+    .skills-header {
+        justify-content: center;
+        box-shadow: 0rem 0.1rem 0.5rem 0.2rem #0c0c0c95;
+        border: solid 0.1rem #0c0c0c95;
+        border-radius: 0.2rem; 
+    }
+
+    .about-header h1,
+    .skills-header h1,
+    .works-section h1 {
+        font-size: 8rem;
+        text-shadow: 0rem 1rem 0.5rem #0c0c0c95;
+    }
+
+    .works-section h1,
+    .about-section {
+        margin-top: 8rem;
+    }
+
+    .skills-body {
+          align-items: start;
+    }
+}

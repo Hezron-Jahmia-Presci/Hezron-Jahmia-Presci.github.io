@@ -1,120 +1,82 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-import "../styles/pages.scss";
-import "../styles/components.scss";
-import PageNavButton from "@/components/pageNavigator";
+import { Geist, Geist_Mono } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  weight: ["400", "600"],
+
+import "./globals.css";
+import "./../styles/homePage.scss";
+import "./../styles/components.scss";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const garamond = EB_Garamond({
+  variable: "--font-eb-garamond",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Hezron Jahmia Presci | Software Engineer & IT Specialist",
-
+  title: "Jahmia Hezron Presci | Software Engineer & IT Specialist",
   description:
-    "I’m Hezron Jahmia, an IT specialist & fullstack software engineer based in Kampala, Uganda. I build clean, practical, and maintainable digital solutions using Flutter, Golang, React, Docker, and Kubernetes.",
-
+    "Portfolio of Jahmia Hezron Presci — Software Engineer and IT Specialist based in Kampala, Uganda. Skilled in web, mobile, and backend systems with Go, React, Flutter, TypeScript, and Next.js.",
   keywords: [
-    "Hezron Jahmia",
-    "Presci",
-    "Hezron Jahmia Presci",
-    "Hezron",
-    "Hezy",
-    "Jahmia",
-    "IT",
-    "ICT",
-    "IT Specialist Uganda",
-    "Software Engineer Kampala",
-    "Fullstack Developer Uganda",
-    "Frontend",
-    "Backend",
-    "Flutter Developer",
-    "Golang Developer",
-    "React Developer",
-    "Docker Kubernetes Engineer",
+    "Jahmia Hezron Presci",
+    "Software Engineer Uganda",
+    "Full Stack Developer",
+    "React Next.js Developer",
+    "GoLang Backend",
+    "Flutter Mobile Developer",
+    "IT Specialist Kampala",
   ],
-
-  authors: [{ name: "Hezron Jahmia", url: "https://hezron-jahmia-presci.vercel.app/" }],
-  creator: "Hezron Jahmia Presci",
-  publisher: "Hezron Jahmia Presci",
-
-  metadataBase: new URL("https://hezron-jahmia-presci.vercel.app"),
-  alternates: {
-    canonical: "/",
-  },
-
+  authors: [{ name: "Jahmia Hezron Presci" }],
   openGraph: {
-    title: "Hezron Jahmia | Software Engineer & IT Specialist",
+    title: "Jahmia Hezron Presci | Software Engineer & IT Specialist",
     description:
-      "Explore the work of Hezron Jahmia, an IT Specialist & fullstack software engineer from Kampala specializing in Flutter, React, Golang, and scalable backend systems.",
+      "Explore the portfolio of Jahmia Hezron Presci — Software Engineer & IT Specialist from Kampala, Uganda. Expertise in Go, React, Flutter, TypeScript, and Next.js.",
     url: "https://hezron-jahmia-presci.vercel.app/",
-    siteName: "Hezron Jahmia Presci",
-    locale: "en_UG",
-    type: "website",
+    siteName: "Jahmia Hezron Presci Portfolio",
     images: [
       {
-        url: "https://hezron-jahmia-presci.vercel.app/images/og-banner.jpg",
+        url: "https://hezron-jahmia-presci.vercel.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hezron Jahmia Presci Portfolio Screenshot",
+        alt: "Portfolio Preview - Jahmia Hezron Presci",
       },
     ],
+    locale: "en_US",
+    type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Hezron Jahmia | Fullstack Software Engineer",
+    title: "Jahmia Hezron Presci | Software Engineer & IT Specialist",
     description:
-      "IT specialist & Fullstack developer based in Kampala. Building digital systems using Flutter, React, Golang, and Kubernetes.",
-    creator: "@HJahmia",
-    images: ["https://hezron-jahmia-presci.vercel.app/images/og-banner.jpg"],
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
-
-  verification: {
-    google: "K3amrIFK1A992vvDXlo9dFt3cnmgw66nPT2jsMks2es",
+      "Portfolio showcasing work in web, mobile, and backend development with Go, React, Flutter, and Next.js.",
+    images: ["https://hezron-jahmia-presci.vercel.app/og-image.png"],
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
-      <head>
-        {/* Optional: structured data for Google */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Hezron Jahmia Presci",
-              url: "https://hezron-jahmia-presci.vercel.app",
-              jobTitle: "Software Engineer & IT Specialist",
-              description: "Hezron Jahmia Presci is a Software Engineer and IT Specialist based in Kampala, Uganda, specializing in Flutter, React, Golang, and scalable backend systems.",
-              image: "https://hezron-jahmia-presci.vercel.app/images/og-banner.jpg",
-
-              sameAs: [
-                "https://github.com/Hezron-Jahmia-Presci",
-                "https://www.linkedin.com/in/hezron-jahmia/",
-                "https://x.com/HJahmia",
-              ],
-            }),
-          }}
-        />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Navbar />
         {children}
-        <PageNavButton />
+        <Footer />
       </body>
     </html>
   );

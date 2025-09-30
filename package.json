@@ -1,34 +1,21 @@
 {
-  "name": "hezron-jahmia-presci",
+  "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out",
-    "postbuild": "next-sitemap"
-
+    "lint": "next lint"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "classnames": "^2.5.1",
-    "framer-motion": "^12.18.1",
-    "lg-thumbnail": "^1.2.1",
-    "lg-zoom": "^1.3.0",
-    "lightgallery": "^2.9.0-beta.1",
-    "next": "^15.3.4",
-    "next-sitemap": "^4.2.3",
-    "react": "^19.0.0",
-    "react-countup": "^6.5.3",
-    "react-dom": "^19.0.0",
+    "framer-motion": "^12.23.22",
+    "next": "15.4.5",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-icons": "^5.5.0",
-    "react-masonry-css": "^1.0.16",
-    "sass": "^1.89.2",
-    "swiper": "^11.2.8",
-    "yet-another-react-lightbox": "^3.23.3"
+    "react-intersection-observer": "^9.16.0",
+    "sass": "^1.90.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -36,8 +23,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.4",
-    "gh-pages": "^6.3.0",
+    "eslint-config-next": "15.4.5",
     "typescript": "^5"
   }
 }
